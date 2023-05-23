@@ -1,0 +1,146 @@
+#user-data {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#user-data td,
+#user-data th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#user-data tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#user-data tr:hover {
+  background-color: #ddd;
+}
+
+#user-data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-37 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  margin-left: 35vw;
+  margin-top:15vw;
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label,
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  margin-bottom: 10px;
+}
+
+.login-container input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  margin: 50px;
+}
+.chart-container {
+  position: relative;
+  width: 800px; /* Set the width to a value that accommodates the labels */
+  max-height: 1000px;
+}
+
+.chart-container svg {
+  position: relative;
+  overflow: visible;
+}
+
+.chart-label {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: gray;
+  white-space: nowrap; /* Prevent line breaks */
+  text-overflow: ellipsis; /* Show ellipsis for long labels */
+  transform: rotate(45deg);
+  transform-origin: center bottom;
+}
+.chart-container path.domain {
+  position: absolute;
+  stroke: gray;
+}
+
+.chart-container .tick text {
+  fill: grey;
+}

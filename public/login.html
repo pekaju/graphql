@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login with kood/Jõhvi credentials</h2>
+    <form id="login-form">
+      <label for="username">Username or email:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <p id="error" style="visibility: hidden; color: red">Incorrect credentials or password</p>
+
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <script>
+    // Handle form submission
+    console.log(document.getElementById('login-form'));
+    document.getElementById('login-form').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent form submission
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      })
+      const json = await response.json()
+      if (json.result === "success") {
+        document.getElementById('error').style.visibility = "hidden";
+        location.reload()
+      }else {
+        document.getElementById('error').style.visibility = "visible";
+      }
+    });
+  </script>
+</body>
+</html>
